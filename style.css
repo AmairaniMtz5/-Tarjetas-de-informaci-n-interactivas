@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  position: relative;
+  background: #111; /* Puedes cambiar este fondo */
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0d0d0d, #1c1c1c);
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  padding: 40px;
+}
+
+.card {
+  width: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
+
+
+.color1 { background: #1e1e2f; }
+.color2 { background: #2f1e1e; }
+.color3 { background: #1e2f1e; }
+.color4 { background: #2f2f1e; }
+.color5 { background: #1e2f2f; }
+.color6 { background: #3f1e2f; }
+.color7 { background: #1e3f3f; }
+.color8 { background: #4f2f1e; }
+.color9 { background: #2f1e3f; }
+.color10 { background: #1e1e1e; }
+
+.circle {
+  width: 70px;
+  height: 70px;
+  background: #ffcc00;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.card-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.content .title {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+.extra {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  text-align: center;
+  color: #ddd;
+  font-size: 0.95rem;
+  padding: 0 10px;
+}
+
+.card.active .extra {
+  max-height: 200px;
+  margin-top: 10px;
+}
+
+
+.container.active .card:not(.active) {
+  filter: blur(4px);
+  transform: scale(0.95);
+  opacity: 0.5;
+}
+
+.card.active {
+  transform: scale(1.03);
+  z-index: 1;
+}
